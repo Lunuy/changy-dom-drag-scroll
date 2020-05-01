@@ -1,0 +1,43 @@
+{
+  "name": "changy-dom-drag-scroll",
+  "version": "1.0.0",
+  "description": "Drag scroll in changy-dom",
+  "main": "./dist/index.js",
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "webpack-dev-server --config ./test/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lunuy/changy-dom-drag-scroll.git"
+  },
+  "keywords": [
+    "changy-dom",
+    "drag",
+    "scroll"
+  ],
+  "author": "Lunuy",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Lunuy/changy-dom-drag-scroll/issues"
+  },
+  "homepage": "https://github.com/Lunuy/changy-dom-drag-scroll#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-syntax-jsx": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "ts-loader": "^7.0.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "changy": "^8.0.2",
+    "changy-dom": "^3.0.8"
+  }
+}

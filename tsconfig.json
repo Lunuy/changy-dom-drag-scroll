@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "jsxFactory": "ChangyDom.createElementJSX",
+      "outDir": "./dist/",
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "ES2019",
+      "allowJs": true,
+      "declaration": true,
+      "rootDir": "src",
+      "esModuleInterop": true/*,
+      "baseUrl": "./",
+      "paths" : {
+        "R/*": ["./*"]
+      }*/
+    },
+    "include": [
+      "./src/*",
+      "./src/**/*"
+    ]
+}
