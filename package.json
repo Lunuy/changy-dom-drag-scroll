@@ -1,6 +1,6 @@
 {
   "name": "changy-dom-drag-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Drag scroll in changy-dom",
   "main": "./dist/index.js",
   "scripts": {

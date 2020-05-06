@@ -6,7 +6,7 @@ import { DragScroll } from "../dist/index";
 function Main() {
     return (
         <div style={{width: "100%", height:"100%"}}>
-            <DragScroll element={<Content/>} cam={{zoomAmount: new Number(1.0005)}}/>
+            <DragScroll element={<Content/>} cam={{zoomAmount: new Number(1.2)}}/>
         </div>
     );
 }

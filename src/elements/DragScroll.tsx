@@ -2,7 +2,6 @@
 import { Number, cF, String, O } from "changy";
 import ChangyDom, { Element } from "changy-dom";
 
-const numberToPixel : ((number : Number) => String<any>) = cF((number => number + "px"), String);
 const transformOrigin : ((x : Number, y : Number) => String<any>) = cF(
     (x, y) => `${x}px ${y}px`
 , String);
@@ -31,13 +30,13 @@ function DragScroll({cam:{x = new Number(0), y = new Number(0), zoom = new Numbe
         }}
         onwheel={(e : WheelEvent) => {
             const boundingClientRect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-            const zoomMultiplier = zoomAmount[O]**(-e.deltaY);
+            const zoomMultiplier = zoomAmount[O]**(-((e.deltaY > 0) ? 1 : -1));
 
             // compute
             const mouseX = (e.clientX - boundingClientRect.width/2) / (zoom[O] * zoomMultiplier);
             const mouseY = (e.clientY - boundingClientRect.height/2) / (zoom[O] * zoomMultiplier);
 
-            const camPosMoveMultiplier = zoomMultiplier - 1//zoomMultiplier * (zoomMultiplier - 1);
+            const camPosMoveMultiplier = zoomMultiplier - 1;
             const camXMove = camPosMoveMultiplier * mouseX;
             const camYMove = camPosMoveMultiplier * mouseY;
 
@@ -51,7 +50,7 @@ function DragScroll({cam:{x = new Number(0), y = new Number(0), zoom = new Numbe
                 width:"100%",
                 position:"absolute",
                 transformOrigin: transformOrigin(x, y),
-                transform:transform(x, y, zoom)
+                transform: transform(x, y, zoom)
             }}>
                 {
                     element
