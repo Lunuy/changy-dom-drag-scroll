@@ -1,12 +1,12 @@
 {
   "name": "changy-dom-drag-scroll",
-  "version": "1.0.1",
-  "description": "Drag scroll in changy-dom",
+  "version": "1.1.0",
+  "description": "Drag scroll, pinch zoom in changy-dom",
   "main": "./dist/index.js",
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack",
-    "test": "webpack-dev-server --config ./test/webpack.config.js"
+    "test": "webpack-dev-server --config ./test/webpack.config.js --host 0.0.0.0"
   },
   "repository": {
     "type": "git",

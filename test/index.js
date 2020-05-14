@@ -13,24 +13,10 @@ function Main() {
 
 function Content() {
     return (
-        <div>
-            <pre>
-            {`ㅎㅇㅎㅇ 슈발?
-            asdf
-            adv
-            asdv
-            asdfvas
-            divasd
-            divasdvc
-            ac
-            vjp
-            woeeojvqve
-            pojvfejop
-
-            qvjeqvjooj
-            geq
-            ipoj`}
-            </pre>
+        <div style={{backgroundColor: "skyblue", display: "inline-block", width:"600px"}}>
+            <p style={{userSelect: "none", fontSize: "calc(max(13px, 60px - 5vw))"}}>
+                안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요
+            </p>
         </div>
     );
 }
