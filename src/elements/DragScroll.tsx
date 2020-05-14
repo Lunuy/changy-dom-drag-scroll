@@ -19,7 +19,7 @@ function getPos([clientX,clientY]: [number, number], boundingClientRect : Client
 
 export interface Cam {x : Number, y : Number, zoom : Number, zoomAmount : Number};
 
-function DragScroll({cam:{x = new Number(0), y = new Number(0), zoom = new Number(1), zoomAmount = new Number(0)}, element} : {cam:Cam, element : Element}) {
+function DragScroll({cam:{x = new Number(0), y = new Number(0), zoom = new Number(1), zoomAmount = new Number(0)}, element} : {cam:{[K in keyof Cam]?:Cam[K]}, element : Element}) {
     const cam : Cam = {x, y, zoom, zoomAmount};
     let isMousePressed = false;
     let touches : TouchList = [] as any;
