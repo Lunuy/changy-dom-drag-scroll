@@ -1,4 +1,4 @@
 
-import DragScroll from "./elements/DragScroll";
+import DragScroll, { Cam } from "./elements/DragScroll";
 
-export { DragScroll };
+export { DragScroll, Cam };
