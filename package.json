@@ -15,7 +15,9 @@
   "keywords": [
     "changy-dom",
     "drag",
-    "scroll"
+    "scroll",
+    "pinch",
+    "zoom"
   ],
   "author": "Lunuy",
   "license": "Unlicense",
