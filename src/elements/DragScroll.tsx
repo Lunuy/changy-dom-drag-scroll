@@ -17,10 +17,27 @@ function getPos([clientX,clientY]: [number, number], boundingClientRect : Client
 }
 
 
-export interface Cam {x : Number, y : Number, zoom : Number, zoomAmount : Number};
+export interface Cam {
+    x : Number,
+    y : Number,
+    zoom : Number,
+    zoomAmount : Number,
+    minZoom : Number,
+    maxZoom : Number
+};
 
-function DragScroll({cam:{x = new Number(0), y = new Number(0), zoom = new Number(1), zoomAmount = new Number(0)}, element} : {cam:{[K in keyof Cam]?:Cam[K]}, element : Element}) {
-    const cam : Cam = {x, y, zoom, zoomAmount};
+function DragScroll({
+    cam:{
+        x = new Number(0),
+        y = new Number(0),
+        zoom = new Number(1),
+        zoomAmount = new Number(0),
+        minZoom = new Number(0),
+        maxZoom = new Number(Infinity)
+    },
+    element
+} : {cam:{[K in keyof Cam]?:Cam[K]}, element : Element}) {
+    const cam : Cam = { x, y, zoom, zoomAmount, minZoom, maxZoom };
     let isMousePressed = false;
     let touches : TouchList = [] as any;
     return (

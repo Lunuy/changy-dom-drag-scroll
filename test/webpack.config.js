@@ -29,5 +29,10 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  externals: []
+  externals: [],
+  devServer: {
+    contentBase: path.resolve(__dirname, './'),
+    disableHostCheck: true,
+    host: "0.0.0.0" // default : 127.0.0.1
+  }
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack",
-    "test": "webpack-dev-server --config ./test/webpack.config.js --host 0.0.0.0"
+    "test": "webpack-dev-server --config ./test/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "changy": "^8.0.2",
-    "changy-dom": "^3.0.8"
+    "changy": "^10.0.1",
+    "changy-dom": "^4.0.0"
   }
 }
