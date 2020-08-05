@@ -57,7 +57,6 @@ function DragScroll({
         onmousemove={(e : MouseEvent) => {
             e.preventDefault();
             if(isMousePressed) {
-                console.log(e.movementX/zoom[O], e.movementY/zoom[O]);
                 x.set(x[O] - e.movementX/zoom[O]);
                 y.set(y[O] - e.movementY/zoom[O]);
             }
@@ -90,7 +89,6 @@ function DragScroll({
         // Touch
         ontouchstart={(e : TouchEvent) => {
             e.preventDefault();
-            console.log("시발!", e);
             touches = e.touches;
             //touches.push(e.touches);
         }}
