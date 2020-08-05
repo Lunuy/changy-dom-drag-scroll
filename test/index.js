@@ -46,7 +46,9 @@ function Content() {
                 scrollbar: "rebeccapurple green"
             }}
             id="dongbackggot"
-            onwheel={e => e.stopPropagation()}
+            onwheel={e => {
+                if(!e.ctrlKey) e.stopPropagation();
+            }}
             ontouchstart={e => e.stopPropagation()}
             ontouchmove={e => e.stopPropagation()}
             ontouchend={e => e.stopPropagation()}

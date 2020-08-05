@@ -22,8 +22,7 @@ export interface Cam {
     y : Number,
     zoom : Number,
     zoomAmount : Number,
-    minZoom : Number,
-    maxZoom : Number
+    touchpadZoomAmount : Number
 };
 
 function DragScroll({
@@ -32,12 +31,11 @@ function DragScroll({
         y = new Number(0),
         zoom = new Number(1),
         zoomAmount = new Number(0),
-        minZoom = new Number(0),
-        maxZoom = new Number(Infinity)
+        touchpadZoomAmount = new Number(1.03)
     },
     element
 } : {cam:{[K in keyof Cam]?:Cam[K]}, element : Element}) {
-    const cam : Cam = { x, y, zoom, zoomAmount, minZoom, maxZoom };
+    const cam : Cam = { x, y, zoom, zoomAmount, touchpadZoomAmount };
     let isMousePressed = false;
     let touches : TouchList = [] as any;
     return (
@@ -59,6 +57,7 @@ function DragScroll({
         onmousemove={(e : MouseEvent) => {
             e.preventDefault();
             if(isMousePressed) {
+                console.log(e.movementX/zoom[O], e.movementY/zoom[O]);
                 x.set(x[O] - e.movementX/zoom[O]);
                 y.set(y[O] - e.movementY/zoom[O]);
             }
@@ -66,7 +65,12 @@ function DragScroll({
         onwheel={(e : WheelEvent) => {
             e.preventDefault();
             const boundingClientRect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-            const zoomMultiplier = zoomAmount[O]**(-((e.deltaY > 0) ? 1 : -1));
+            const zoomMultiplier = (
+                e.ctrlKey ?
+                    touchpadZoomAmount[O]**-e.deltaY
+                :
+                    zoomAmount[O]**-((e.deltaY > 0) ? 1 : -1)
+            );
 
             // compute
             const mousePos = [
@@ -86,6 +90,7 @@ function DragScroll({
         // Touch
         ontouchstart={(e : TouchEvent) => {
             e.preventDefault();
+            console.log("시발!", e);
             touches = e.touches;
             //touches.push(e.touches);
         }}
